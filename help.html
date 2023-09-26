@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+        <!--=============== REMIX ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Oxford Year 9 - Survey   </title>
+    </head>
+    <body>
+        <!--==================== HEADER STARTS ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <!-- <i class="ri-leaf-line nav__logo-icon"></i> YEAR 9 || SURVEY -->
+                    <img src="assets/img/logo.png" alt="" class="logo"> OXFORD 
+                    
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="index.html" >Back to the survey</a>
+                        </li>
+                        <!-- <li class="nav__item">
+                            <a href="help.html" class="nav__link">Contact Us</a>
+                        </li> -->
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+
+                <div class="nav__btns">
+                    <!-- Theme change button -->
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+ 
+ 
+
+            <!--==================== CONTACT US BESIDE STARTS ====================-->
+            <section class="contact section container" id="contact">                
+                <div class="contact__container grid">
+                    <div class="contact__box">
+                        <h2 class="section__title">
+                            Having issue? Write us!
+                        </h2>
+
+                        <div class="contact__data">
+                            <div class="contact__information">
+                                <h3 class="contact__subtitle">Attention !</h3>
+                                <span class="contact__description">
+                                    If you are facing the probelm,<br> write your report bellow
+                                </span>
+                            </div>
+
+                            <div class="contact__information">
+                                <h3 class="contact__subtitle">Have a good day !</h3>
+                                <span class="contact__description">
+                                    We will try to solve all your issues :)
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+            <!--==================== CONTACT US BESIDE STOPS ====================-->
+<!-- CONTACT US STARTS -->
+<form id="form">
+    <div class="contact__inputs">
+                            <div class="contact__content">
+                                <input type="text" name="email_id" id="email_id" placeholder=" " class="contact__input">
+                                <label for="email_id" class="contact__label">Your email</label>
+                            </div>
+                            <div class="contact__content">
+                                <input type="text" name="subject" id="subject" placeholder=" " class="contact__input">
+                                <label for="subject" class="contact__label">Subject</label>
+                            </div>
+                            <div class="contact__content contact__area">
+                            <input type="text" name="message" id="message" placeholder=" " class="contact__input"></input>                              
+                            <label for="message" class="contact__label">Message</label>
+                        </div>
+                    </div>
+                <input class="button button--flex" type="submit" id="button" value="Send Email"> 
+        </div>
+    </section>
+</main>
+<!-- CONTACT US STOPS -->
+
+<!-- SCROLL STARTS -->
+        <a href="#" class="scrollup" id="scroll-up"> 
+            <i class="ri-arrow-up-fill scrollup__icon"></i>
+        </a>
+<!-- SCROLL STOPS -->
+
+    <!-- SCRIPTS STARTS  -->
+<script>
+    const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'service_s9q0g1i';
+   const templateID = 'template_ij9clkp';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Message was sent successfully! Thank you for answering! ');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+</script>
+        <script src="assets/js/scrollreveal.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+          emailjs.init('2JaXsN89n4JUbMSHC')
+        </script>
+    <!-- SCRIPTS STOPS -->
+    </body>
+</html>
